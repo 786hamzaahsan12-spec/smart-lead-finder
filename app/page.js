@@ -150,7 +150,7 @@ function getStatusStyle(status) {
 export default function Home() {
   const { data: session, status } = useSession();
 
-  // 1️⃣ ALL useState
+
   const [leads, setLeads] = useState(initialLeads);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -198,7 +198,7 @@ export default function Home() {
 
     fetchLeads();
   }, []);
-  // FILTER LEADS
+
   const filteredLeads = useMemo(() => {
     const searchText = search.trim().toLowerCase();
 
@@ -232,14 +232,14 @@ export default function Home() {
       );
   }, [leads, search, industry, location, minimumScore]);
 
-  // RECOMMENDED LEADS
+
   const recommendedLeads = useMemo(() => {
     return filteredLeads
       .filter((lead) => Number(lead.score || 0) >= 85)
       .slice(0, 3);
   }, [filteredLeads]);
 
-  // STATS
+
   const stats = {
     total: leads.length,
 
@@ -263,7 +263,7 @@ export default function Home() {
         : 0,
   };
 
-  // AUTH LOADING
+
   if (status === "loading") {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#07090d] text-white">
@@ -272,7 +272,7 @@ export default function Home() {
     );
   }
 
-  // NOT LOGGED IN
+
   if (!session) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#07090d] px-5 text-white">
@@ -385,7 +385,7 @@ export default function Home() {
     const emailAddress = newLead.email.trim().toLowerCase();
     const employeeCount = Number(newLead.employees);
 
-    // Required fields
+
     if (
       !companyName ||
       !contactName ||
