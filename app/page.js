@@ -171,7 +171,7 @@ function Sidebar({ activeTab, setActiveTab, session }) {
   ];
 
   return (
-    <aside className="hidden h-[99px] w-64 shrink-0 border-r border-purple-500/10 bg-[#08050f]/90 px-4 py-5 lg:flex lg:flex-col">
+    <aside className="hidden h-[105px] w-64 shrink-0 border-r border-purple-500/10 bg-[#08050f]/90 px-4 py-5 lg:flex lg:flex-col">
       {/* Logo */}
       <div className="mb-8 flex items-center gap-3 px-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-purple-400 via-fuchsia-500 to-cyan-400 font-black text-white shadow-lg shadow-purple-500/20">
